@@ -42,4 +42,6 @@ function increment(state,counter = 1){
 
 increment(state,prevState);
 
+console.log(state,prevState);
+
 
