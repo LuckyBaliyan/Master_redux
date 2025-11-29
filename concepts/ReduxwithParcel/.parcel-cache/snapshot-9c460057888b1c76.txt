@@ -1,23 +1,25 @@
-46
-93C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\package.json134083768024978364 0
-93C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\.package-lock.json134083768025484779 0
+48
 74C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\package.json134083768025432268 0
-79C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\package-lock.json134083768025472401 0
-66C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist134083946947763736 1
-94C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist\ReduxwithParcel.3c14d121.js134083946947699096 0
-72C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\index.html134083773032929281 0
+73C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\myStrore.js134089027346102219 0
+79C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\package-lock.json134088890413633163 0
+66C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist134089117652853218 1
+94C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist\ReduxwithParcel.3c14d121.js134089117652801662 0
+72C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\index.html134089030582305470 0
 74C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules134083768025472401 1
+100C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\utils\kindOf.ts134083768025287961 0
+95C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\compose.ts134083768025213189 0
+103C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\applyMiddleware.ts134083768025187318 0
+77C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\productslist.js134089045609251101 0
+71C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\script.js134089117651672210 0
+93C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\package.json134083768024978364 0
+93C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\.package-lock.json134088890413663161 0
 103C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\dist\cjs\redux.cjs.map134083768025047393 0
 80C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux134083768025146898 1
-71C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\script.js134083946943713320 0
 85C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\dist134083768025339538 1
 99C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\createStore.ts134083768025237948 0
 91C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\LICENSE.md134083768025097593 0
 90C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\README.md134083768025111511 0
 84C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src134083768025247954 1
-100C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\utils\kindOf.ts134083768025287961 0
-95C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\compose.ts134083768025213189 0
-103C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\applyMiddleware.ts134083768025187318 0
 106C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\bindActionCreators.ts134083768025187318 0
 103C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\combineReducers.ts134083768025213189 0
 93C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\src\index.ts134083768025257954 0
@@ -42,6 +44,6 @@
 95C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\dist\redux.mjs134083768025146898 0
 99C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\dist\redux.mjs.map134083768025084486 0
 99C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\node_modules\redux\dist\cjs\redux.cjs134083768024942730 0
-77C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist\index.html134083773755785973 0
+77C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist\index.html134089106994515572 0
 94C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist\ReduxwithParcel.3464ddca.js134083766932284212 0
-98C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist\ReduxwithParcel.3c14d121.js.map134083946947753749 0
+98C:\Users\LUCKY BALIYAN\Desktop\Redux\concepts\ReduxwithParcel\dist\ReduxwithParcel.3c14d121.js.map134089117652843240 0
