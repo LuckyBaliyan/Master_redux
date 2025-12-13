@@ -1,0 +1,353 @@
+body {
+  font-family: 'Neue Montreal', sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration-line: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  padding: 8px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap:4vh;
+}
+
+.list-grid {
+  max-width: 1200px;
+  margin-top: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  margin-inline: auto;
+  display: grid;
+  padding: 16px;
+}
+
+.product {
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 1px 2px 6px rgba(128, 128, 128, 0.499);
+  padding: 16px;
+  position: relative;
+}
+
+.wish{
+    position: absolute;
+    z-index: 5;
+    top:10px;
+    right:10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.title-container {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.product h3 {
+  margin: 0; /* Remove default margin to avoid extra space */
+  line-height: 1.2; /* Adjust line height as needed */
+  max-height: 2.4em; /* (line-height * number of lines) to limit to two lines */
+  text-overflow: ellipsis;
+  white-space: normal; /* Allow text to wrap */
+  font-size: 1rem;
+}
+
+.product-image {
+  height: 160px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.price-rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta-container {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.cta-container button {
+  width: 50%;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  border-radius: 14px;
+}
+
+.cta-container button:nth-child(2) {
+  width: 50%;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  border-radius: 14px;
+  background-color: #000;
+  color:#fff;
+}
+
+.product a:hover {
+  text-decoration-line: underline;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 2px solid #898989;
+  z-index: 100;
+}
+
+.header-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 16px;
+  gap: 24px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.searchbar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+form input {
+  padding: 8px;
+  font: inherit;
+  max-width: 400px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+form button {
+  cursor: pointer;
+  font: inherit;
+  margin-left: 8px;
+}
+
+.price {
+  font-size: 24px;
+  margin: 0;
+}
+
+
+.str{
+    font-size: 34px;
+    text-align: center;
+}
+
+/* ------------------------------
+   NavbarEcom.css (create this file)
+--------------------------------- */
+
+/* Colors */
+:root {
+  --white: #ffffff;
+  --black: #0f0f0f;
+  --gray: #6b6b6b;
+  --light-gray: #eeeeee;
+  --border: #dcdcdc;
+}
+
+/* Container */
+.ecom-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+  position: fixed;
+  width:100%;
+  top: 0;
+  z-index: 50;
+}
+
+.ecom-nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.ecom-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.ecom-logo span {
+  color: var(--gray);
+}
+
+/* Links */
+.ecom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.ecom-links a {
+  text-decoration: none;
+  font-size: 15px;
+  color: var(--gray);
+  padding: 6px 8px;
+  border-radius: 5px;
+}
+
+.ecom-links a:hover {
+  background: var(--light-gray);
+  color: var(--black);
+}
+
+/* Actions (right side) */
+.ecom-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ecom-search {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  width: 180px;
+}
+
+.ecom-search:focus {
+  border-color: var(--black);
+}
+
+/* Buttons */
+.ecom-btn {
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ecom-btn:hover {
+  opacity: 0.85;
+}
+
+.cart-btn {
+  background: var(--gray);
+}
+
+.cart-btn:hover {
+  background: #595959;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .ecom-links {
+    display: none;
+  }
+
+  .ecom-search {
+    width: 130px;
+  }
+}
+
+
+
+.cart-container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.cart-header {
+  font-weight: 700;
+  padding: 24px;
+}
+
+.cart-item-container:not(:last-child) {
+  border-bottom: 1px solid #898989;
+}
+
+.cart-item-container {
+  padding: 12px 24px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+}
+
+.cart-item-container > div:not(.cart-item) {
+  justify-content: center;
+}
+
+.cart-item-container > div:last-child {
+  justify-content: flex-end;
+}
+
+.cart-item-container img {
+  width: 60px;
+}
+
+.cart-item-container > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-items-count {
+  position: absolute;
+  font-size: 12px;
+  background-color: black;
+  border-radius: 100%;
+  color: white;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  transform: translate(-40%, -90%);
+}
+
+.wishlist-page{
+    padding:1em;
+}
+

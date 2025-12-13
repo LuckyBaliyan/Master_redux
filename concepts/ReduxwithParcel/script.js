@@ -4,6 +4,10 @@ import { productsList } from './productslist';
 import { cartReducer } from './CartReducer';
 import productReducer from './ProductsReducer';
 import { wishListReducer } from './wishList';
+import { decreaseCartItemQuantity } from './CartReducer';
+import { cartAddItem } from './CartReducer';
+import { addWishListItem } from './wishList';
+import { removeWishListItem } from './wishList';
 // we must need to add type = "module" to js file 
 
 console.log(productsList);
@@ -130,6 +134,9 @@ console.log(myStore.getState());
 */
 
 
+const a = decreaseCartItemQuantity(18);
+console.log(a);
+
 //MODIFYING data to cart
 store.dispatch({ type: 'cart/addItems', payload: { productId: 1, quantity: 1 } });
 store.dispatch({ type: 'cart/addItems', payload: { productId: 11, quantity: 2 } });
@@ -143,3 +150,9 @@ store.dispatch({ type: CART_DEC_QUANTATITY, payload: { productId: 11 } });
 store.dispatch({ type: CART_DEC_QUANTATITY, payload: { productId: 11 } });
 store.dispatch({ type: ADD_IN_WISHLIST, payload: { productId: 5 } });
 store.dispatch({ type: DELETE_FROM_WISHLIST, payload: { productId: 5 } });
+
+//these are the helper functions which are used to pass values to setUp the action object eaisly
+store.dispatch(a);
+store.dispatch(cartAddItem(13,5));
+store.dispatch(addWishListItem(13));
+store.dispatch(removeWishListItem(5));
