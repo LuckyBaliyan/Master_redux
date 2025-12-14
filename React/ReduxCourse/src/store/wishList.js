@@ -21,6 +21,7 @@ export function removeWishListItem(productId){
 export function wishListReducer(state = [], action) {
     switch (action.type) {
         case ADD_IN_WISHLIST:
+            //prevents duplicates
             if(state.some(p => p.productId === action.payload.productId)){
                 return state;
             }

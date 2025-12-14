@@ -50,6 +50,11 @@ main{
     cursor: pointer;
 }
 
+.wishlist-container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:20px;
+}
 
 .title-container {
   display: -webkit-box;

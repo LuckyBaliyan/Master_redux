@@ -1,11 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Product from '../components/functional/Product';
 
 const WishList = () => {
   const wishList = useSelector(state => state.wishList);
+  const products = useSelector(state => state.products);
 
-  console.log(wishList);
-  
+  const wishListItems  = wishList.map((item)=>{
+    const product = products.find(p=>
+      p.id === item.productId,
+    )
+
+    return{...product};
+  })
+
+  console.log(wishListItems); 
 
   return (
     <div className='wishlist-page'>
@@ -14,10 +23,9 @@ const WishList = () => {
         </h1>
         <div className='wishlist-container'>
           {
-            wishList.map((item)=>(
-                <h4 key={item.productId}>
-                    {item.productId}
-                </h4>
+            wishListItems.map((item)=>(
+              <Product id={item.id} key={item.id} title={item.title} rating={item.rating} price={item.price} 
+              imageUrl={item.image} />
             ))
           }
         </div>
