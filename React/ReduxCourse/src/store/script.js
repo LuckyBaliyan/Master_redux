@@ -8,6 +8,7 @@ import { decreaseCartItemQuantity } from './CartReducer';
 import { cartAddItem } from './CartReducer';
 import { addWishListItem } from './wishList';
 import { removeWishListItem } from './wishList';
+import { produce } from 'immer';
 // we must need to add type = "module" to js file 
 
 console.log(productsList);
@@ -156,3 +157,39 @@ store.dispatch(a);
 store.dispatch(cartAddItem(13,5));
 store.dispatch(addWishListItem(13));
 store.dispatch(removeWishListItem(5));
+
+
+//immer.js Functionality
+
+const users = [
+    {
+        name:'Revant Singh',
+        age:25,
+    },
+    {
+        name:'Adarsh Namdev',
+        age:32,
+    },
+    {
+        name:'Chiraag Kushwaha',
+        age:20
+    }
+];
+
+//Normal method:-
+const newUsers = users.map((user,i)=>{
+    if(i === 1){
+        return {...user,age:20};
+    }
+    return user;
+})
+
+console.log(newUsers);
+
+//using Produce method of immer.js
+
+const newUsers2 = produce(users,(userCopy)=>{
+    userCopy[1].age = 19;
+})
+
+console.log(newUsers2);

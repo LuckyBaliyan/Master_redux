@@ -1,3 +1,5 @@
+import { produce } from "immer";
+
 //Action Types
 const CART_ADD_ITEM = 'cart/addItems';
 const CART_REMOVE_ITEM = 'cart/removeItems';
@@ -29,10 +31,54 @@ export function cartAddItem(productId,quantity=1){
     }
 }
 
+export function cartRemoveItem(productId){
+    return{
+        type:CART_REMOVE_ITEM,
+        payload:{productId}
+    }
+}
+
 
 
 //Reducer
-export function cartReducer(state = [], action) {
+export function cartReducer(originalState = [], action) {
+   return produce(originalState,(state)=>{
+        const exsistingIndex = state.findIndex(
+            (cartItem) => cartItem.productId === action.payload.productId
+        )
+        switch(action.type){
+          case CART_ADD_ITEM:
+            if(exsistingIndex !== -1){
+                state[exsistingIndex].quantity += 1
+                break;
+            }
+            state.push({...action.payload,quantity: 1});
+            break;
+
+            case CART_REMOVE_ITEM:
+                state.splice(exsistingIndex,1);
+                break;
+
+            case CART_INC_QUANTATITY:
+                if(exsistingIndex !== -1){
+                state[exsistingIndex].quantity += 1;
+                break;
+                }
+                break;
+            
+            case CART_DEC_QUANTATITY:
+                if(exsistingIndex !== -1){
+                state[exsistingIndex].quantity -= 1;
+                if(state[exsistingIndex].quantity  === 0){
+                    state.splice(exsistingIndex,1);
+                }
+                break;
+                }
+            break;
+        }
+        return state;
+    })
+    /*
     switch (action.type) {
         case CART_ADD_ITEM:
             //logic of increasing quantity of exsisting item if already added one time we dont want it to be added again
@@ -69,4 +115,5 @@ export function cartReducer(state = [], action) {
         default:
             return state;
     }
+        */
 }

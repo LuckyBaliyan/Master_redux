@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { cartIncreaseQuantity, decreaseCartItemQuantity } from '../../store/CartReducer';
+import { cartIncreaseQuantity, decreaseCartItemQuantity, cartRemoveItem } from '../../store/CartReducer';
 
 export default function CartItem({productId, title, rating, price, image, quantity }) {
   const dispatch = useDispatch();
@@ -19,6 +19,7 @@ export default function CartItem({productId, title, rating, price, image, quanti
         <button onClick={()=>dispatch(decreaseCartItemQuantity(productId))}>-</button>
         <span>{quantity}</span>
         <button onClick={()=>dispatch(cartIncreaseQuantity(productId))}>+</button>
+        <button onClick={()=>dispatch(cartRemoveItem(productId))}>Remove</button>
       </div>
       <div className="item-total">${(quantity * price).toFixed(2)}</div>
     </div>
