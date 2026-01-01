@@ -1,14 +1,16 @@
-import { combineReducers, createStore } from 'redux';
-import { myCreateStore } from './myStrore';
+//import { combineReducers, createStore } from 'redux';
+//import { myCreateStore } from './myStrore';
 import { productsList } from './productslist';
-import { cartReducer } from './CartReducer';
+//import { cartReducer } from './CartReducer';
 import productReducer from './ProductsReducer';
 import { wishListReducer } from './wishList';
-import { decreaseCartItemQuantity } from './CartReducer';
-import { cartAddItem } from './CartReducer';
+//import { decreaseCartItemQuantity } from './CartReducer';
+//import { cartAddItem } from './CartReducer';
 import { addWishListItem } from './wishList';
 import { removeWishListItem } from './wishList';
+import cartReducer from './slices/CartSlice';
 import { produce } from 'immer';
+import { configureStore } from '@reduxjs/toolkit';
 // we must need to add type = "module" to js file 
 
 console.log(productsList);
@@ -83,14 +85,23 @@ console.log(reduxState); // will results 10 posts as 12 - 2 = 10;
 */
 
 //we have to combine all the reducers before passign to the store if we have multiple reducers
-const finalReducer = combineReducers({
+/*const finalReducer = combineReducers({
     products:productReducer,
     cartItems:cartReducer,
     wishList:wishListReducer
 })
+*/
 
-export const store = createStore(finalReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-console.log(store);
+/*export const store = createStore(finalReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+console.log(store);*/
+
+export const store = configureStore({
+  reducer: {
+    products: productReducer,
+    cartItems: cartReducer,
+    wishList: wishListReducer,
+  },
+})
 // we must need to pass the reducer int it
 //It consist 3 main functions 1.getState,2.dispatch,3.subscribe
 
@@ -135,6 +146,7 @@ console.log(myStore.getState());
 */
 
 
+/*
 const a = decreaseCartItemQuantity(18);
 console.log(a);
 
@@ -193,3 +205,4 @@ const newUsers2 = produce(users,(userCopy)=>{
 })
 
 console.log(newUsers2);
+*/

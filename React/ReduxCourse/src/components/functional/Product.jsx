@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
-import { cartAddItem } from "../../store/CartReducer"
+//import { cartAddItem } from "../../store/CartReducer"
+import { cartAddItem } from "../../store/slices/CartSlice";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { useState } from "react";
@@ -50,11 +51,11 @@ export default function Product({id, title, rating, price, imageUrl }) {
       </div>
       <div className="price-rating-container">
         <p className="rating">{+rating} ★ ★ ★ ★</p>
-        <p className="price">{price}</p>
+        <p className="price">$ {price}</p>
       </div>
       <div className="cta-container">
         <button onClick={()=>{
-            dispatch(cartAddItem(id))
+            dispatch(cartAddItem({productId:id}))
         }}>Add to Cart</button>
         <button>Buy Now</button>
       </div>

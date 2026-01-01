@@ -40,7 +40,7 @@ export default function Cart() {
             price={price}
             quantity={quantity}
             image={image}
-            rating={rating.rate}
+            rating={rating?.rate}
           />
         ))}
         <div className="cart-header cart-item-container">

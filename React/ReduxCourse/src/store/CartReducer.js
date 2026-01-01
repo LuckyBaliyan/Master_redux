@@ -1,10 +1,15 @@
 import { produce } from "immer";
+import {createSlice} from "@reduxjs/toolkit";
+
 
 //Action Types
 const CART_ADD_ITEM = 'cart/addItems';
 const CART_REMOVE_ITEM = 'cart/removeItems';
 const CART_INC_QUANTATITY = 'cart/incItem';
 const CART_DEC_QUANTATITY = 'cart/decItem';
+
+
+/*
 
 //Action Creater
 export function decreaseCartItemQuantity(productId){
@@ -38,16 +43,24 @@ export function cartRemoveItem(productId){
     }
 }
 
+*/
+
+const getIndex = (state,action)=>{
+    return state.findIndex(
+        (cartItem)=> cartItem.productId === action.payload.productId
+    );
+}
+
 
 
 //Reducer
-export function cartReducer(originalState = [], action) {
+function cartReducer(originalState = [], action) {
    return produce(originalState,(state)=>{
         const exsistingIndex = state.findIndex(
             (cartItem) => cartItem.productId === action.payload.productId
         )
         switch(action.type){
-          case CART_ADD_ITEM:
+          case  CART_ADD_ITEM:
             if(exsistingIndex !== -1){
                 state[exsistingIndex].quantity += 1
                 break;
@@ -114,6 +127,8 @@ export function cartReducer(originalState = [], action) {
                 }).filter((item) => item.quantity > 0) // remove the item having quantity 0 automatically
         default:
             return state;
-    }
-        */
+    }*/
 }
+
+
+
