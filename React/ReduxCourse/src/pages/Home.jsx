@@ -4,10 +4,13 @@ import { store } from '../store/script';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
-    const productsList = useSelector((state)=> state.products);
+    const productsList = useSelector((state)=> state.products.list);
+    const isLoadig = useSelector((state)=> state.products.loading);
     console.log(productsList);
 
-  return (
+  return isLoadig?(<h1 style={{textAlign:"center",marginTop:'150px'}}>
+    Loading...
+  </h1>): (
      <div className='list-grid'>
             {
               productsList.map((p,i)=>(

@@ -2,11 +2,24 @@
 // Plain clean white/black/gray e-commerce navbar
 // Create a NavbarEcom.css file using the CSS included below
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import CartBtn from '../buttons/CartBtn';
 import { NavLink,Link } from 'react-router';
+import { useDispatch } from 'react-redux';
+//import { fetching } from 'src/store/slices/productsSlice';
+import { updateAllProducts, fetching } from '../../../store/slices/productsSlice';
+//import { productsList } from '../../../store/productslist';
 
 export default function Nav() {
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+      dispatch(fetching())
+      fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())            
+            .then(data=>dispatch(updateAllProducts(data)));
+  },[])
 
     
 

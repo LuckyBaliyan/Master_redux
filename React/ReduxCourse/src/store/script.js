@@ -2,15 +2,18 @@
 //import { myCreateStore } from './myStrore';
 import { productsList } from './productslist';
 //import { cartReducer } from './CartReducer';
-import productReducer from './ProductsReducer';
+//import productReducer from './ProductsReducer';
 import { wishListReducer } from './wishList';
 //import { decreaseCartItemQuantity } from './CartReducer';
 //import { cartAddItem } from './CartReducer';
 import { addWishListItem } from './wishList';
 import { removeWishListItem } from './wishList';
 import cartReducer from './slices/CartSlice';
+import ProductReducer from './slices/productsSlice';
 import { produce } from 'immer';
 import { configureStore } from '@reduxjs/toolkit';
+import { logger } from './middlewares/middleware';
+import { updateAllProducts } from './slices/productsSlice';
 // we must need to add type = "module" to js file 
 
 console.log(productsList);
@@ -95,13 +98,29 @@ console.log(reduxState); // will results 10 posts as 12 - 2 = 10;
 /*export const store = createStore(finalReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 console.log(store);*/
 
+//MiddleWare Function
+
+/*function logger(store){
+    return function (next){
+        return function (action){
+            console.log(store,next,action);
+        }
+    }
+}*/
+
+
+
 export const store = configureStore({
   reducer: {
-    products: productReducer,
+    products: ProductReducer,
     cartItems: cartReducer,
     wishList: wishListReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(logger),
 })
+
+
 // we must need to pass the reducer int it
 //It consist 3 main functions 1.getState,2.dispatch,3.subscribe
 
