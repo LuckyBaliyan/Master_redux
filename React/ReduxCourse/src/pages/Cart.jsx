@@ -7,7 +7,7 @@ export default function Cart() {
     //This will only give u the stored or setted reducer o/p i.e the product id and quantity value of it's we have 
     // to call all the products as well and then we use find method to choose the actual product whose id is in cartItems
     const cartItems = useSelector(state => state.cartItems);
-    const Products = useSelector(state => state.products);
+    const Products = useSelector(state => state.products.list);
 
     const cartProducts = cartItems.map(cartItem => {
         const product = Products.find(

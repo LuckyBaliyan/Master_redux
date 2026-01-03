@@ -51,6 +51,7 @@ const slice = createSlice({
 
 
 export default slice.reducer;
+
 export const {
     cartAddItem,
     cartRemoveItem,

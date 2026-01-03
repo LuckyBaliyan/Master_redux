@@ -7,19 +7,40 @@ import CartBtn from '../buttons/CartBtn';
 import { NavLink,Link } from 'react-router';
 import { useDispatch } from 'react-redux';
 //import { fetching } from 'src/store/slices/productsSlice';
-import { updateAllProducts, fetching } from '../../../store/slices/productsSlice';
+import { updateAllProducts, fetching, fetchProductsError } from '../../../store/slices/productsSlice';
 //import { productsList } from '../../../store/productslist';
 
 export default function Nav() {
 
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-      dispatch(fetching())
-      fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())            
-            .then(data=>dispatch(updateAllProducts(data)));
-  },[])
+  // useEffect(()=>{
+  //     dispatch(fetching())
+  //     fetch('https://fakestoreapi.com/productss')
+  //           .then(res=>res.json())            
+  //           .then(data=>dispatch(updateAllProducts(data)))
+  //           .catch(()=>{
+  //             dispatch(fetchProductsError());
+  //           });
+  // },[])
+
+  useEffect(() => {
+  const loadProducts = async () => {
+    dispatch(fetching());
+
+    try {
+      const res = await fetch('https://fakestoreapi.com/products');
+      if (!res.ok) throw new Error("Failed to fetch products");
+
+      const data = await res.json();
+      dispatch(updateAllProducts(data));
+    } catch (err) {
+      dispatch(fetchProductsError(err.message));
+    }
+  };
+
+  loadProducts();
+}, [dispatch]);
 
     
 
