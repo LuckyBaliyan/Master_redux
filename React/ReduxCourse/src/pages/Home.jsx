@@ -2,11 +2,12 @@ import React from 'react'
 import Product from '../components/functional/Product';
 import { store } from '../store/script';
 import { useSelector } from 'react-redux';
+import { getAllProducts, getLoadigState, getProductsError } from '../store/slices/productsSlice';
 
 const Home = () => {
-    const productsList = useSelector((state)=> state.products.list);
-    const isLoadig = useSelector((state)=> state.products.loading);
-    const error = useSelector((state)=> state.products.error);
+    const productsList = useSelector(getAllProducts);
+    const isLoadig = useSelector(getLoadigState);
+    const error = useSelector(getProductsError);
     console.log(productsList);
 
   return isLoadig?(<h1 style={{textAlign:"center",marginTop:'150px'}}>

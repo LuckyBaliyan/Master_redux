@@ -15,6 +15,9 @@ const slice = createSlice({
     name:'cart',
     initialState:[],
     reducers:{
+        loadCartItems(state,action){
+            return action.payload.products;
+        },
         cartAddItem(state,action){
           const exsistingIndex = getIndex(state,action);
             if(exsistingIndex !== -1){
@@ -53,6 +56,7 @@ const slice = createSlice({
 export default slice.reducer;
 
 export const {
+    loadCartItems,
     cartAddItem,
     cartRemoveItem,
     decreaseCartItemQuantity,

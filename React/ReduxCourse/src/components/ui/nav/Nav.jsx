@@ -8,6 +8,7 @@ import { NavLink,Link } from 'react-router';
 import { useDispatch } from 'react-redux';
 //import { fetching } from 'src/store/slices/productsSlice';
 import { updateAllProducts, fetching, fetchProductsError } from '../../../store/slices/productsSlice';
+import { loadCartItems } from '../../../store/slices/CartSlice';
 //import { productsList } from '../../../store/productslist';
 
 export default function Nav() {
@@ -37,6 +38,10 @@ export default function Nav() {
     } catch (err) {
       dispatch(fetchProductsError(err.message));
     }
+
+    fetch('https://fakestoreapi.com/carts/1')
+    .then(response => response.json())
+    .then(data => dispatch(loadCartItems(data)));
   };
 
   loadProducts();
