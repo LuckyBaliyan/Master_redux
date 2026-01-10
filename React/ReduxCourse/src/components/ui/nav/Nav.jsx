@@ -26,7 +26,28 @@ export default function Nav() {
   // },[])
 
   useEffect(() => {
-  const loadProducts = async () => {
+
+    dispatch({
+      type:'api/makeCall',
+      payload:{
+        url:'products',
+        onStart:fetching.type,
+        onSucess: updateAllProducts.type,
+        onError: fetchProductsError.type,
+      },
+    });
+
+  /*  dispatch({
+      type:'api/makeCall',
+      payload:{
+        url:'carts/5',
+        onStart:loadCartItems.type,
+        onSucess: updateAllProducts.type,
+        onError: fetchProductsError.type,
+      }
+    });
+
+  /*const loadProducts = async () => {
     dispatch(fetching());
 
     try {
@@ -45,6 +66,7 @@ export default function Nav() {
   };
 
   loadProducts();
+  */
 }, [dispatch]);
 
     

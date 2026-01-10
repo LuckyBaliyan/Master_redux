@@ -14,6 +14,7 @@ import { produce } from 'immer';
 import { configureStore } from '@reduxjs/toolkit';
 import { logger } from './middlewares/middleware';
 import { updateAllProducts } from './slices/productsSlice';
+import { apiMiddleware } from './middlewares/Apimiddleware';
 // we must need to add type = "module" to js file 
 
 console.log(productsList);
@@ -117,7 +118,7 @@ export const store = configureStore({
     wishList: wishListReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(logger),
+    getDefaultMiddleware().concat(apiMiddleware),
 })
 
 
