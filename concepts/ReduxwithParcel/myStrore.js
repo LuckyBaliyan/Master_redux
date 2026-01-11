@@ -20,6 +20,6 @@ export function myCreateStore(reducer){
            }
         },
     };
-    store.dispatch({type:"@@INIT"});
-    return store;
+   store.dispatch({type:"@@INIT"});
+   return store;
 }
